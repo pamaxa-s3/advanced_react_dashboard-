@@ -1,23 +1,23 @@
-export const getUsers = async () => {
-	const res = await fetch('https://jsonplaceholder.typicode.com/users');
-
-	if (!res.ok) {
-		throw new Response('Failed to fetch users', { status: res.status });
-	}
-
-	return res.json();
-};
+let cache = null;
 
 const delay = ms => new Promise(res => setTimeout(res, ms));
 
-export const getUsersSlow = async () => {
-	await delay(2000);
+export const getUsers = async () => {
+    await delay(2000);
 
-	const res = await fetch('https://jsonplaceholder.typicode.com/users');
+    const res = await fetch("https://jsonplaceholder.typicode.com/users");
+    if (cache) {
+        return cache;
+    }
 
-	if (!res.ok) {
-		throw new Response('Failed to fetch users', { status: res.status });
-	}
+    if (!res.ok) {
+        throw new Response("Failed to fetch users", { status: res.status });
+    }
 
-	return res.json();
+    cache = await res.json();
+    return cache;
+};
+
+export const removeUser = async id => {
+    cache = cache.filter(user => user.id !== Number(id));
 };

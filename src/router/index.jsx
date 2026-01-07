@@ -1,7 +1,8 @@
 import { createBrowserRouter } from "react-router-dom";
 import { MainLayout } from "@layout";
-import { Home, ErrorPage, Users, User, UsersSlow } from "@pages";
-import { usersLoader, userLoader, usersLoaderSlow } from "@loaders";
+import { Home, ErrorPage, Users, CreateUser,UserPage } from "@pages";
+import { usersLoader, userLoader } from "@loaders";
+import { createUserAction,deleteUserAction } from "@actions";
 
 export const router = createBrowserRouter([
     {
@@ -20,14 +21,18 @@ export const router = createBrowserRouter([
                 loader: usersLoader
             },
             {
-                path: "usersslow",
-                element: <UsersSlow />,
-                loader: usersLoaderSlow
+                path: "users/:id",
+                element: <UserPage />,
+                loader: userLoader
             },
             {
-                path: "users/:id",
-                element: <User />,
-                loader: userLoader
+                path: "users/new",
+                element: <CreateUser />,
+                action: createUserAction
+            },
+            {
+                path: "users/:id/delete",
+                action: deleteUserAction
             }
         ]
     }

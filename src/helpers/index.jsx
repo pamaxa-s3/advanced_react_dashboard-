@@ -1,1 +1,1 @@
-export { getUsers, getUsersSlow } from './api';
+export { getUsers, removeUser } from './api';

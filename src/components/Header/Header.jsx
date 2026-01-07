@@ -9,7 +9,7 @@ const Header = () => {
             {" | "}
             <NavLink to="/users/:id">User</NavLink>
             {" | "}
-            <NavLink to="/usersslow">UsersSlow</NavLink>
+            <NavLink to="/users/new">Create new user</NavLink>
         </nav>
     );
 };

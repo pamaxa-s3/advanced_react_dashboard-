@@ -1,2 +1,2 @@
-export {usersLoader, usersLoaderSlow} from './users.loader'
+export {usersLoader} from './users.loader'
 export {userLoader} from './user.loader'
