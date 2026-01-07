@@ -3,15 +3,16 @@ let cache = null;
 const delay = ms => new Promise(res => setTimeout(res, ms));
 
 export const getUsers = async () => {
-    await delay(2000);
-
-    const res = await fetch("https://jsonplaceholder.typicode.com/users");
     if (cache) {
         return cache;
     }
 
+    await delay(5000);
+
+    const res = await fetch('https://jsonplaceholder.typicode.com/users');
+
     if (!res.ok) {
-        throw new Response("Failed to fetch users", { status: res.status });
+        throw new Response('Failed to fetch users', { status: res.status });
     }
 
     cache = await res.json();
