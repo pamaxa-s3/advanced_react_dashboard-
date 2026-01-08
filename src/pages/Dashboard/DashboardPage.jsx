@@ -1,10 +1,13 @@
-import { Suspense } from "react";
-import Dashboard from "./Dashboard";
+import { Suspense } from 'react';
+import Dashboard from './Dashboard';
+import { ErrorBoundary } from '@components';
 
 const DashboardPage = () => (
-    <Suspense fallback={<p>Завантаження дашборду...</p>}>
-        <Dashboard />
-    </Suspense>
+    <ErrorBoundary>
+        <Suspense fallback={<p>Завантаження дашборду...</p>}>
+            <Dashboard />
+        </Suspense>
+    </ErrorBoundary>
 );
 
 export default DashboardPage;

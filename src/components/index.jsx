@@ -7,3 +7,4 @@ export { default as OrdersTable } from './OrdersTable';
 export { default as UsersTable } from './UsersTable';
 export { default as AddWidgetForm } from './AddWidgetForm';
 export { default as Filters } from './Filters';
+export { default as ErrorBoundary } from './ErrorBoundary';
