@@ -1,26 +1,25 @@
-import {FiltersPanel,LiveSearch, OrdersTable} from '@components';
+import { use, useState } from "react";
+import { dashboardPromise } from "./data";
+import { AddWidgetForm, UsersTable, Filters } from "@components";
 
 const Dashboard = () => {
-	return (
-		<section>
-			<h1>Analytics Dashboard</h1>
+    const data = use(dashboardPromise);
 
-			{/* Filters */}
-			<FiltersPanel />
+    const [search, setSearch] = useState("");
 
-			{/* Search */}
-			<LiveSearch />
-			
-			<OrdersTable />
+    return (
+        <>
+            <h1>Аналітичний Dashboard</h1>
 
-			{/* Widgets */}
-			<div>
-				<div>SalesWidget</div>
-				<div>UsersWidget</div>
-				<div>ActivityWidget</div>
-			</div>
-		</section>
-	);
+            <StatsWidgets stats={data.stats} />
+
+            <Filters search={search} onSearchChange={setSearch} />
+
+            <UsersTable data={data.table} search={search} />
+
+            <AddWidgetForm />
+        </>
+    );
 };
 
 export default Dashboard;
