@@ -3,3 +3,4 @@ export { default as ErrorPage } from "./ErrorPage";
 export { default as Users } from "./Users";
 export { default as UserPage } from "./UserPage";
 export { default as CreateUser } from "./CreateUser";
+export { default as Dashboard } from "./Dashboard";

@@ -1,30 +1,47 @@
-import { useLoaderData, useNavigation } from 'react-router-dom';
-import { UserItem } from '@components';
-import '@styles/spinner.css';
+import { useEffect, useState } from "react";
+import { getUsers } from "@helpers";
+import { UserItem } from "@components";
+import "@styles/spinner.css";
 
 const Users = () => {
-	const users = useLoaderData();
-	const navigation = useNavigation();
+    const [users, setUsers] = useState(null);
+    const [error, setError] = useState(null);
 
-	const isLoading = navigation.state === 'loading';
-	console.log(isLoading);
+    useEffect(() => {
+        let mounted = true;
 
-	if (isLoading) {
-		// return <span className="loader"></span>
-		console.log(isLoading);
-	}
+        getUsers()
+            .then(data => mounted && setUsers(data))
+            .catch(err => mounted && setError(err.message));
 
-	return (
-		<div>
-			<h2>Users</h2>
+        return () => {
+            mounted = false;
+        };
+    }, []);
 
-			<ul>
-				{users.map(user => (
-					<UserItem key={user.id} user={user} />
-				))}
-			</ul>
-		</div>
-	);
+    if (error) {
+        return <p>Error: {error}</p>;
+    }
+
+    if (!users) {
+        return (
+            <div>
+                <h2>Users</h2>
+                <span className="loader"></span>
+            </div>
+        );
+    }
+
+    return (
+        <div>
+            <h2>Users</h2>
+            <ul>
+                {users.map(user => (
+                    <UserItem key={user.id} user={user} />
+                ))}
+            </ul>
+        </div>
+    );
 };
 
 export default Users;
