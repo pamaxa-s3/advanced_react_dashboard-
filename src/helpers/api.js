@@ -3,7 +3,6 @@ let cache = null;
 const delay = ms => new Promise(res => setTimeout(res, ms));
 
 export const getUsers = async () => {
-    
     if (cache) {
         return cache;
     }
