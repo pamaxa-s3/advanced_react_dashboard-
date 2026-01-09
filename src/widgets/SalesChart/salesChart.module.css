@@ -1,0 +1,54 @@
+.wrapper {
+	margin-top: 32px;
+	padding: 16px;
+	background: var(--bg-card);
+	border-radius: 12px;
+}
+
+.header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.controls button {
+	margin-left: 8px;
+	padding: 6px 12px;
+	border-radius: 6px;
+	border: 1px solid #ddd;
+	background: #fff;
+	cursor: pointer;
+}
+
+.active {
+	background: #2563eb;
+	color: white;
+}
+
+.chart {
+	display: flex;
+	align-items: flex-end;
+	height: 200px;
+	margin-top: 16px;
+	gap: 8px;
+}
+
+.bar {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.barFill {
+	width: 100%;
+	background: #60a5fa;
+	border-radius: 4px 4px 0 0;
+	transition: height 0.3s ease;
+}
+
+.loading {
+	margin-top: 8px;
+	font-size: 14px;
+	color: var(--text-secondary);
+}

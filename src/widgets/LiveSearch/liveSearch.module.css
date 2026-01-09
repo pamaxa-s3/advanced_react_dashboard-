@@ -1,0 +1,33 @@
+.wrapper {
+	margin-bottom: 32px;
+}
+
+.input {
+	width: 100%;
+	padding: 12px;
+	border-radius: 8px;
+	border: 1px solid #ddd;
+	font-size: 16px;
+}
+
+.loading {
+	margin-top: 8px;
+	font-size: 14px;
+	color: var(--text-secondary);
+}
+
+.list {
+	margin-top: 12px;
+	list-style: none;
+	padding: 0;
+}
+
+.list li {
+	padding: 8px 0;
+	border-bottom: 1px solid #eee;
+}
+
+mark {
+	background-color: #fde047;
+	padding: 0 2px;
+}

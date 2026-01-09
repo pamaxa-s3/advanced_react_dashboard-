@@ -1,0 +1,38 @@
+.wrapper {
+	padding: 16px;
+	border-radius: 12px;
+	background: #fafafa;
+}
+
+.form {
+	display: flex;
+	gap: 12px;
+	margin-bottom: 8px;
+}
+
+.form input {
+	padding: 8px;
+	border-radius: 6px;
+	border: 1px solid #ddd;
+}
+
+.form button {
+	padding: 8px 14px;
+	border-radius: 6px;
+	border: none;
+	background: #111;
+	color: white;
+	cursor: pointer;
+}
+
+.form button:disabled {
+	opacity: 0.6;
+}
+
+.error {
+	color: crimson;
+}
+
+.success {
+	color: green;
+}

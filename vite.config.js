@@ -12,6 +12,7 @@ export default defineConfig({
     alias: {
       '@components': path.resolve(__dirname, './src/components'),
       '@app': path.resolve(__dirname, './src/app'),
+      '@api': path.resolve(__dirname, './src/api'),
       '@actions': path.resolve(__dirname, './src/actions'),
       '@contexts': path.resolve(__dirname, './src/contexts'),
       '@pages': path.resolve(__dirname, './src/pages'),
@@ -22,6 +23,7 @@ export default defineConfig({
       '@layout': path.resolve(__dirname, './src/layout'),
       '@loaders': path.resolve(__dirname, './src/loaders'),
       '@validation': path.resolve(__dirname, './src/validation'),
+      '@widgets': path.resolve(__dirname, './src/widgets'),
       '@styles': path.resolve(__dirname, './src/styles'),
     }
   }

@@ -31,6 +31,7 @@ const Header = () => {
     const { theme, toggleTheme } = use(ThemeContext);
 
     const selectId = useId();
+    const themeId = useId();
     const [period, setPeriod] = useState('week');
 
     const [isPending, startTransition] = useTransition();
@@ -88,6 +89,15 @@ const Header = () => {
 
             {/* RIGHT */}
             <div className={cls.right}>
+                <div>
+                    <label htmlFor={themeId}>Theme</label>
+                    <input
+                        id={themeId}
+                        type="text"
+                        value={theme}
+                        readOnly
+                    />
+                </div>
                 <button
                     className={cls.themeToggle}
                     onClick={toggleTheme}
@@ -106,6 +116,3 @@ const Header = () => {
 };
 
 export default Header;
-
-
-

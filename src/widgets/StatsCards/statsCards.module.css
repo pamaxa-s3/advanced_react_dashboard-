@@ -1,0 +1,36 @@
+.grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+	gap: 16px;
+	margin-bottom: 24px;
+}
+
+.card {
+	background: var(--bg-card);
+	padding: 16px;
+	border-radius: 12px;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.title {
+	font-size: 14px;
+	color: var(--text-secondary);
+}
+
+.value {
+	font-size: 28px;
+	margin: 8px 0;
+}
+
+.change {
+	font-size: 14px;
+	font-weight: 500;
+}
+
+.positive {
+	color: #16a34a;
+}
+
+.negative {
+	color: #dc2626;
+}

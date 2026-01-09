@@ -1,13 +1,13 @@
-import React from 'react';
+import { Component } from 'react';
 
-class ErrorBoundary extends React.Component {
+class ErrorBoundary extends Component {
 	constructor(props) {
 		super(props);
 		this.state = { hasError: false };
 	}
 
-	static getDerivedStateFromError() {
-		return { hasError: true };
+	static getDerivedStateFromError(error) {
+		return { hasError: true, error: error.message };
 	}
 
 	componentDidCatch(error, errorInfo) {
@@ -17,9 +17,12 @@ class ErrorBoundary extends React.Component {
 	render() {
 		if (this.state.hasError) {
 			return (
-				<div role="alert">
+				<div style={{ padding: 24 }}>
 					<h2>Щось пішло не так</h2>
 					<p>Спробуйте оновити сторінку або повернутись пізніше.</p>
+					<button onClick={() => this.setState({ hasError: false })}>
+						Try again
+					</button>
 				</div>
 			);
 		}
