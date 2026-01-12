@@ -19,7 +19,7 @@ export default defineConfig({
       '@utils': path.resolve(__dirname, './src/utils'),
       '@helpers': path.resolve(__dirname, './src/helpers'),
       '@router': path.resolve(__dirname, './src/router'),
-      '@layout': path.resolve(__dirname, './src/layout'),
+      '@layouts': path.resolve(__dirname, './src/layouts'),
       '@loaders': path.resolve(__dirname, './src/loaders'),
       '@validation': path.resolve(__dirname, './src/validation'),
       '@styles': path.resolve(__dirname, './src/styles'),
