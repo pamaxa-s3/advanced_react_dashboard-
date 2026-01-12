@@ -1,0 +1,23 @@
+.wrapper {
+  padding: 16px;
+  background: var(--card-bg);
+  border-radius: 8px;
+}
+
+form {
+  display: grid;
+  gap: 8px;
+}
+
+span {
+  color: red;
+  font-size: 12px;
+}
+
+.success {
+  color: green;
+}
+
+.error {
+  color: red;
+}

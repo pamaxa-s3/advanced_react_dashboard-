@@ -1,5 +1,5 @@
 import DashboardLayout from "@layouts/DashboardLayout";
-import DashboardPage from "@pages/DashboardPage";
+import Dashboard from "@pages/Dashboard";
 
 import { dashboardLoader } from "./loaders";
 import { addSaleAction, addUserAction } from "./actions";
@@ -12,7 +12,7 @@ export const routes = [
         errorElement: <RootErrorBoundary />,
         loader: dashboardLoader,
         children: [{
-          index: true, element: <DashboardPage />,errorElement: <DashboardErrorBoundary />, actions: async ({request})=>{
+          index: true, element: <Dashboard />,errorElement: <DashboardErrorBoundary />, actions: async ({request})=>{
             const formData = await request.formData()
             const intent = formData.get('_intent')
             if(intent === 'add-sale'){

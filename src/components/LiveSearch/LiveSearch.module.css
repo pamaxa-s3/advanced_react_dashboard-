@@ -1,0 +1,10 @@
+.search {
+  padding: 16px;
+  background: var(--card-bg);
+  border-radius: 8px;
+}
+
+input {
+  width: 100%;
+  padding: 8px;
+}

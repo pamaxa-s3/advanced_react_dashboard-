@@ -1,16 +1,46 @@
-# React + Vite
+Dashboard (React 19 + React Router v7)
+Навчальний dashboard-проєкт з фокусом на modern data-flow, optimistic UI та offline-first мислення.
+Stack
+React 19
+React Router v7 (Data APIs)
+Vite
+jsonplaceholder (mock API)
+Key Concepts Demonstrated
+1. Router-first architecture
+loaders / actions
+deferred data
+revalidation rules
+2. Optimistic UI
+create / edit / delete
+inline edit
+bulk edit
+undo actions
+validation-safe optimistic updates
+3. React 19 Hooks
+use()
+useOptimistic
+useActionState
+useTransition
+useId
+4. Error Boundaries
+route-level
+widget-level
+isolation strategy
+Optimistic Data Flow (Users example)
+Копіювати код
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Form submit
+ └─ optimistic state update
+     └─ immediate UI update
+         └─ server response
+             ├─ success → merge
+             └─ error → rollback
+Accessibility
+useId for form control binding
+aria-live for optimistic feedback
+keyboard-first inline editing
+Why this project matters
+This project demonstrates how to build fast, resilient UIs that:
+feel instant
+handle failures gracefully
+scale architecturally

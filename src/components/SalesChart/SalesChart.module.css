@@ -1,0 +1,16 @@
+.wrapper {
+  padding: 16px;
+  background: var(--card-bg);
+  border-radius: 8px;
+}
+
+.controls {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.chart {
+  list-style: none;
+  padding: 0;
+}

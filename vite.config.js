@@ -16,11 +16,13 @@ export default defineConfig({
       '@contexts': path.resolve(__dirname, './src/contexts'),
       '@pages': path.resolve(__dirname, './src/pages'),
       '@data': path.resolve(__dirname, './src/data'),
+      '@store': path.resolve(__dirname, './src/store'),
       '@utils': path.resolve(__dirname, './src/utils'),
       '@helpers': path.resolve(__dirname, './src/helpers'),
       '@router': path.resolve(__dirname, './src/router'),
       '@layouts': path.resolve(__dirname, './src/layouts'),
       '@loaders': path.resolve(__dirname, './src/loaders'),
+      '@services': path.resolve(__dirname, './src/services'),
       '@validation': path.resolve(__dirname, './src/validation'),
       '@styles': path.resolve(__dirname, './src/styles'),
     }
